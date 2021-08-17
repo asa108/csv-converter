@@ -245,7 +245,11 @@ function App() {
       </div>
       <br />
       <br />
-      {fileUpload && <CSVLink {...csvReport}>CSVとして保存</CSVLink>}
+      {fileUpload && (
+        <CSVLink className="export_button" {...csvReport}>
+          CSVとして保存
+        </CSVLink>
+      )}
     </div>
   );
 }
