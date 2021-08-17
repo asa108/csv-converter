@@ -220,9 +220,20 @@ function App() {
   return (
     <div className="app">
       <h3>Shopify to Yamato csv convertor</h3>
-      <input type="file" accept=".csv,.xlsx,.xls" onChange={handleFileUpload} />
-      <DataTable pagination highlightOnHover columns={columns} data={data} />
-
+      <label htmlFor="file_updalod">
+        csvファイルをアップロード
+        <input
+          type="file"
+          id="file_updalod"
+          accept=".csv,.xlsx,.xls"
+          onChange={handleFileUpload}
+          style={{ display: "none" }}
+        />
+        <br />
+      </label>
+      <div className="table_container">
+        <DataTable pagination highlightOnHover columns={columns} data={data} />
+      </div>
       <CSVLink {...csvReport}>CSVとして保存</CSVLink>
     </div>
   );
