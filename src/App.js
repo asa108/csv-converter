@@ -7,6 +7,7 @@ import { CSVLink } from "react-csv";
 function App() {
   const [columns, setColumns] = useState([]);
   const [data, setData] = useState([]);
+  const [fileUpload, setFileUpload] = useState(false);
 
   const csvReport = {
     data: data,
@@ -215,6 +216,8 @@ function App() {
       processData(data);
     };
     reader.readAsBinaryString(file);
+
+    setFileUpload(true);
   };
 
   return (
@@ -232,9 +235,17 @@ function App() {
         <br />
       </label>
       <div className="table_container">
-        <DataTable pagination highlightOnHover columns={columns} data={data} />
+        <DataTable
+          pagination
+          highlightOnHover
+          columns={columns}
+          data={data}
+          noDataComponent="csvファイルをアップロードしてください"
+        />
       </div>
-      <CSVLink {...csvReport}>CSVとして保存</CSVLink>
+      <br />
+      <br />
+      {fileUpload && <CSVLink {...csvReport}>CSVとして保存</CSVLink>}
     </div>
   );
 }

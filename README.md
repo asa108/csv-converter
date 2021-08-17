@@ -13,6 +13,12 @@
 配達希望日:
 希望配達時間:
 
+
+Next to do
+・drop file to upload
+・not showing export button if the file is not uploaded : done
+・allow them to change data
+
 # read-csv-file-react
 Read CSV file in React
 
