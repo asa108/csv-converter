@@ -87,24 +87,6 @@ function App() {
         label: "住所",
         key: "cuurentAddress",
       },
-      // {
-      //   name: "都道府県",
-      //   selector: preColumns[4].selector,
-      //   label: "都道府県",
-      //   key: preColumns[4].name,
-      // },
-      // {
-      //   name: "市町村",
-      //   selector: preColumns[2].selector,
-      //   label: "市町村",
-      //   key: preColumns[2].name,
-      // },
-      // {
-      //   name: "住所",
-      //   selector: preColumns[1].selector,
-      //   label: "住所",
-      //   key: preColumns[1].name,
-      // },
       {
         name: "名称",
         selector: preColumns[0].selector,
@@ -224,7 +206,7 @@ function App() {
     <div className="app">
       <h3>Shopify to Yamato csv convertor</h3>
       <label htmlFor="file_updalod">
-        csvファイルをアップロード
+        Upload
         <input
           type="file"
           id="file_updalod"
@@ -240,14 +222,14 @@ function App() {
           highlightOnHover
           columns={columns}
           data={data}
-          noDataComponent="csvファイルをアップロードしてください"
+          noDataComponent="Upload a csv file"
         />
       </div>
       <br />
       <br />
       {fileUpload && (
         <CSVLink className="export_button" {...csvReport}>
-          CSVとして保存
+          Download
         </CSVLink>
       )}
     </div>
